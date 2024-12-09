@@ -1,8 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./index.css";
+import basketService from "../../../../service/basket.service";
 
-const BasketShopList = ({ product, onAddProduct }) => {
+const BasketShopList = ({ product, content, onAddProduct }) => {
+    console.log(product);
+    console.log({ content });
+
+    const basketProduct = basketService.getBasket(content);
+    console.log(basketProduct);
+
     if (product) {
         return (
             <div className="shop-list">
@@ -59,6 +66,7 @@ const BasketShopList = ({ product, onAddProduct }) => {
 
 BasketShopList.propTypes = {
     product: PropTypes.object,
+    content: PropTypes.object,
     onAddProduct: PropTypes.func,
     onRemoveProduct: PropTypes.func,
     item: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
