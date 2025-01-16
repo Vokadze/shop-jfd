@@ -4,10 +4,7 @@ import PropTypes from "prop-types";
 import BasketCartList from "../../page/basketPageList/basketCartList/basketCartList";
 import BasketOrder from "../../page/basketPageList/basketCartList/basketOrder";
 
-const BasketForm = ({ prodId, product }) => {
-    console.log(prodId);
-    console.log(product);
-
+const BasketForm = () => {
     const [productLocal, setProductLocal] = useState();
     const newProductsItem = localStorage.getItem("productsItems");
     const productsItems = JSON.parse(newProductsItem);
@@ -95,8 +92,6 @@ const BasketForm = ({ prodId, product }) => {
 };
 
 BasketForm.propTypes = {
-    prodId: PropTypes.string,
-    product: PropTypes.object,
     onAddProduct: PropTypes.func,
     onRemoveProduct: PropTypes.func
 };
