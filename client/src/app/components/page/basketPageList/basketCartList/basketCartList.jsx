@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineClose } from "react-icons/ai";
 import BasketCartListCounter from "../../../ui/basketPageUi/basketCartListCounter";
+import basketService from "../../../../service/basket.service";
 
 const BasketCartList = ({ product, productsItems, handleDelete }) => {
+    console.log(product);
+    console.log(productsItems);
+
     const [countProduct, setCountProduct] = useState();
+
+    const basketProduct = basketService.getBasket();
+    console.log(basketProduct);
 
     useEffect(() => {
         setCountProduct();
