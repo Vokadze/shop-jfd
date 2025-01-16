@@ -60,6 +60,7 @@ export const loadProductsList = () => async (dispatch, getState) => {
         dispatch(productsRequested());
         try {
             const { content } = await productService.fetchAll();
+            console.log(content);
             dispatch(productsReceved(content));
         } catch (error) {
             dispatch(productsRequestFiled(error.message));
